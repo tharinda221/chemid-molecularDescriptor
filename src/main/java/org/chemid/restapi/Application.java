@@ -10,10 +10,8 @@
  * specific language governing permissions and limitations under the License.
  */
 
-package org.chemid.application;
+package org.chemid.restapi;
 
-import org.chemid.molecularDescriptor.restapi.MolecularDescriptorServiceRESTAPI;
-import org.chemid.structure.restapi.ChemicalStructureServiceRESTAPI;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -43,13 +41,8 @@ public class Application {
         jettyServer.setHandler(context);
         ServletHolder jerseyServlet = context.addServlet(org.glassfish.jersey.servlet.ServletContainer.class, "/*");
         jerseyServlet.setInitOrder(RESTAPIConstants.INIT_ORDER);
-        // Tells the Jersey Servlet which REST service/class to load.
-//        jerseyServlet.setInitParameter("jersey.config.server.provider.classnames",
-//                MolecularDescriptorServiceRESTAPI.class.getCanonicalName());
         jerseyServlet.setInitParameter("jersey.config.server.provider.classnames",
-                MolecularDescriptorServiceRESTAPI.class.getCanonicalName() + ";org.glassfish.jersey.media.multipart.MultiPartFeature");
-//        jerseyServlet.setInitParameter("jersey.config.server.provider.classnames",
-//                MolecularDescriptorServiceRESTAPI.class.getCanonicalName());
+                MolecularDescriptorServiceRESTAPI.class.getCanonicalName() +  ";org.glassfish.jersey.media.multipart.MultiPartFeature");
         try {
             jettyServer.start();
             jettyServer.join();

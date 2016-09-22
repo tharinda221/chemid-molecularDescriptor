@@ -1,4 +1,4 @@
-package org.chemid.molecularDescriptor.common;
+package org.chemid.common;
 
 
 import org.openscience.cdk.ChemFile;

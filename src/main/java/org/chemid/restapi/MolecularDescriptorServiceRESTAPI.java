@@ -10,9 +10,9 @@
  * specific language governing permissions and limitations under the License.
  */
 
-package org.chemid.molecularDescriptor.restapi;
+package org.chemid.restapi;
 
-import org.chemid.molecularDescriptor.common.MolecularDescriptorService;
+import org.chemid.common.MolecularDescriptorService;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
